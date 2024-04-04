@@ -1,7 +1,6 @@
 import 'package:soundboard/src/util/quote.dart';
 
 const List<Quote> ALL_QUOTES = [
-  Quote("test_sound", "test sound"),
   Quote("jonas_mn_knieen_doen_pijn", "M'n knieën doen pijn"),
   Quote("jonas_simon_kun_je_stoppen", "Simon, kun je alsjeblieft stoppen"),
   Quote("jonas_allahu_akbar", "Allahu akbar"),
@@ -24,4 +23,5 @@ const List<Quote> ALL_QUOTES = [
   Quote("simon_hier_op_uw_bek", "Hier, op uw bek"),
   Quote("simon_dit_meen_je_niet", "Dit meen je niet"),
   Quote("simon_vettige_apenkoppen", "Vettige apenkoppen"),
+  Quote("simon_verse_aardappelen", "Verse aardappelen"),
 ];
