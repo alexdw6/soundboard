@@ -6,6 +6,9 @@ on:
       release_version:
         description: 'Release Version'
         required: true
+        
+permissions:
+  contents: write
 
 jobs:
   create_release:
