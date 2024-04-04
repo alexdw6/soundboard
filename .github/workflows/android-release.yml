@@ -1,4 +1,4 @@
-name: Android Release
+name: Create Release
 
 on:
   workflow_dispatch:
@@ -6,15 +6,21 @@ on:
       release_version:
         description: 'Release Version'
         required: true
-        
-jobs:
-  build:
-    runs-on: ubuntu-latest
 
+jobs:
+  create_release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Release
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Release
         uses: softprops/action-gh-release@v2.0.4
-        if: startsWith(github.ref, 'refs/tags/')
-            
+        with:
+          files: |
+            build/app/outputs/flutter-apk/app-release.apk
+          tag_name: ${{ github.event.inputs.release_version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
