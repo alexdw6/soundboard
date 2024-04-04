@@ -1,7 +1,12 @@
 name: Android Release
 
-on: push
-
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Release Version'
+        required: true
+        
 jobs:
   build:
     runs-on: ubuntu-latest
