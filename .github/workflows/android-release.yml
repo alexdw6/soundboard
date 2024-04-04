@@ -10,9 +10,9 @@ on:
 permissions:
   contents: write
 
-jobs:
-  build:
-    name: Build APK
+jobs:        
+  create_release:
+    name: Create GitHub Release
     runs-on: ubuntu-latest
     
     steps:
@@ -37,13 +37,7 @@ jobs:
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/app-release-${{ github.event.inputs.release_version }}.apk
-          
-  create_release:
-    name: Create GitHub Release
-    runs-on: ubuntu-latest
-    needs: build
     
-    steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
