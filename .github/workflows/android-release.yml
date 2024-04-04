@@ -28,4 +28,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Start release build
-        run: flutter build appbundle --target=lib/src/main.dart
+        run: flutter build apk --target=lib/src/main.dart
