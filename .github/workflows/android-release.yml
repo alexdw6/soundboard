@@ -37,12 +37,6 @@ jobs:
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/app-release-${{ github.event.inputs.release_version }}.apk
-    
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          name: release-apk
-          path: build
 
       - name: Create Release
         uses: softprops/action-gh-release@v2.0.4
